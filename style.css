@@ -1,6 +1,197 @@
+/* Global styles */
+html {
+  --color-accent: oklch(65% 50% 0); /* Define an accent color */
+  --color-highlight: oklch(from var(--color-accent) 95% 5% h); /* Highlight background color */
+}
+
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-  }
+  font: 100%/1.5 system-ui;
+  margin-inline: max(1em, (100% - 100ch) / 2);
+  max-width: 100ch;
+}
+
+/* Navigation bar */
+.topnav {
+  display: flex; /* Arrange links in a row */
+  text-align: center; /* Center text within each link */
+  padding: 0.5em; /* Add spacing inside links */
+  margin-bottom: 1em; /* Separate navbar from content below */
+
+}
+
+.topnav a {
+  text-decoration: none; 
+  color: inherit; /* Match parent text color */
+  padding-block: 3cm;
+  padding: 1em; /* Add spacing within links */
+  border-bottom: 2px solid oklch(80% 3% 200); /* Prevent layout shift */
+  transition: background-color 0.2s ease, border-bottom-width 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.topnav a.current {
+  font-weight: bold; /* Highlight current page link */
+  border-bottom-width: 0.4em; /* Thicker bottom border */
+  border-bottom-color: oklch(80% 3% 200); /* Use the accent color */
+}
+
+.topnav a:hover {
+  background-color: var(--color-highlight); /* Highlight background on hover */
+  border-bottom-color: oklch(65% 50% 0); /* Accent border color on hover */
+  border-bottom-width: 0.4em;
+}
+
+/* Contact form styles */
+form {
+  max-width: 600px; 
+  margin: 0 auto;
+  padding: 1em; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+}
+
+label {
+  display: block;
+  font-weight: bold; 
+  margin-block: 0.5em; 
+}
+
+input,
+textarea,
+button {
+  display: block; 
+  width: 100%; 
+  box-sizing: border-box; 
+  margin-block: 0.5em; 
+  padding: 0.75em; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font: inherit; 
+}
+
+textarea {
+  resize: vertical; 
+}
+
+button {
+  background-color: #007bff; 
+  color: white;
+  border: none; 
+  cursor: pointer;
+  padding: 0.75em 1.5em; 
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 1em;
+  align-items: start;
+}
+
+.projects article h2 {
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.1;
+  text-wrap: balance;
+  color: #333;
+}
+
+.projects article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.projects article p {
+  margin: 0;
+  color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 300%;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 200%;
+  margin-bottom: 0.5em;
+}
+
+
+/* Resume section cards */
+section {
+  background-color: #ffffff; /* White background for the card */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 2em; /* Spacing inside the card */
+  margin: 1.5em auto; /* Add spacing between cards */
+  max-width: 800px; /* Center and constrain width */
+}
+
+/* Section headers */
+section header h2 {
+  font-size: 1.75rem; /* Distinct size for section headers */
+  margin-bottom: 0.5em; /* Space below the header */
+  color: #000000; /* Accent color */
+  border-bottom: 2px solid rgba(0, 123, 255, 0.2); /* Subtle bottom border */
+  padding-bottom: 0.25em; /* Space below the border */
+}
+
+/* Subsection headers (h3 inside article) */
+section article header h3 {
+  font-size: 1.5rem; /* Adjust font size for subsections */
+  margin-bottom: 0.5em;
+  color: #444;
+}
+
+/* Paragraphs in sections */
+section p {
+  margin: 0.5em 0; /* Add vertical spacing */
+  color: #555; /* Subtle text color */
+  line-height: 1.6;
+}
+
+/* Lists */
+section ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+section ul li {
+  margin-bottom: 0.5em; /* Space between list items */
+}
+
+/* Links in sections */
+section a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+section a:hover {
+  color: #0056b3;
+}
