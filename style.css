@@ -4,6 +4,10 @@ html {
   --color-highlight: oklch(from var(--color-accent) 95% 5% h); /* Highlight background color */
 }
 
+:root {
+  color-scheme: light dark; /* Support both light and dark modes */
+}
+
 body {
   font: 100%/1.5 system-ui;
   margin-inline: max(1em, (100% - 100ch) / 2);
@@ -24,19 +28,19 @@ body {
   color: inherit; /* Match parent text color */
   padding-block: 3cm;
   padding: 1em; /* Add spacing within links */
-  border-bottom: 2px solid oklch(80% 3% 200); /* Prevent layout shift */
+  border-bottom: 2px solid var(--border-color); /* Prevent layout shift */
   transition: background-color 0.2s ease, border-bottom-width 0.2s ease; /* Smooth transition for hover effect */
 }
 
 .topnav a.current {
   font-weight: bold; /* Highlight current page link */
   border-bottom-width: 0.4em; /* Thicker bottom border */
-  border-bottom-color: oklch(80% 3% 200); /* Use the accent color */
+  border-bottom-color: var(--border-color); /* Use the accent color */
 }
 
 .topnav a:hover {
-  background-color: var(--color-highlight); /* Highlight background on hover */
-  border-bottom-color: oklch(65% 50% 0); /* Accent border color on hover */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%); /* Highlight background on hover */
+  border-bottom-color: oklch(65% 50% 0);  /* Accent border color on hover */
   border-bottom-width: 0.4em;
 }
 
@@ -50,11 +54,13 @@ form {
   border-radius: 8px; 
 }
 
-label {
+form label {
   display: block;
-  font-weight: bold; 
-  margin-block: 0.5em; 
+  font-weight: bold;
+  margin-block: 0.5em;
+  color:black
 }
+
 
 input,
 textarea,
@@ -85,6 +91,7 @@ button {
 button:hover {
   background-color: #0056b3; 
 }
+
 
 .projects {
   display: grid;
@@ -194,4 +201,46 @@ section a {
 
 section a:hover {
   color: #0056b3;
+}
+
+#loom-companion-mv3 {
+  display: none !important;
+}
+
+
+nav {
+  --border-color: oklch(50% 10% 200 / 40%); /* Adaptable border color */
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Default (Light Mode) */
+.color-scheme {
+  position: absolute; /* Take it out of the normal flow */
+  top: 1rem; /* Distance from the top */
+  right: 1rem; /* Distance from the right */
+  font-size: 80%; /* Smaller font size */
+  font-family: inherit; /* Use the site's font-family */
+}
+
+.color-scheme select {
+  color: black; /* Text color for the dropdown */
+  background-color: white; /* Dropdown background for light mode */
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  font: inherit; /* Inherit font styles */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .color-scheme {
+    background-color: black; /* Background for the container in dark mode */
+    color: white;
+  }
+  
+  .color-scheme select {
+    color: white; /* Dropdown text color */
+    background-color: black; /* Dropdown background for dark mode */
+    border: 1px solid #555; /* Subtle border for dark mode */
+  }
 }
