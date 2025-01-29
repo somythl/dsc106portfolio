@@ -230,17 +230,3 @@ nav {
   border-radius: 4px; /* Rounded corners */
   font: inherit; /* Inherit font styles */
 }
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-  .color-scheme {
-    background-color: black; /* Background for the container in dark mode */
-    color: white;
-  }
-  
-  .color-scheme select {
-    color: white; /* Dropdown text color */
-    background-color: black; /* Dropdown background for dark mode */
-    border: 1px solid #555; /* Subtle border for dark mode */
-  }
-}
