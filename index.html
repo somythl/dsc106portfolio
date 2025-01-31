@@ -4,23 +4,32 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="global.js"></script>
+    <script src="index.js" type="module" defer></script>
+    <script type="module" src="global.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Mahjouri: Personal Site and Portfolio</title>
 </head>
 
 <body>
-    <!-- <nav class="topnav">
-        <a href="index.html">Home</a>
-        <a href="projects/index.html">Projects</a>
-        <a href="contact/index.html">Contact</a>
-        <a href="resume/index.html">Resume</a>
-        <a href="https://github.com/somythl/" target="_blank">GitHub</a>
-    </nav> -->
-    
+    <h1>Samuel Mahjouri</h1>
 
-    <h1> Samuel Mahjouri</h1>
-    <img src="images/IMG_5638.jpg" alt="Photo of Samuel Mahjouri"style="max-width: 30%; height: auto;">
-    <p> Undergraduate Student studying Data Science with a minor in Business-Economics at UCSD</p>
+    <!-- ✅ Container for Profile Photo & GitHub Stats -->
+    <div class="profile-container">
+        <!-- ✅ Profile Image -->
+        <img src="images/homepageselfpic.jpg" alt="Photo of Samuel Mahjouri" class="profile-photo">
+        
+        <!-- ✅ GitHub Stats -->
+        <div class="profile-stats">
+            <h4>GitHub Stats</h4>
+            <div class="github-stats-content"></div>
+            <!-- GitHub data will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <p>Undergraduate Student studying Data Science with a minor in Business-Economics at UCSD</p>
+
+    <h2>Latest Projects</h2>
+    <div class="projects"></div> <!-- ✅ This is where projects will appear -->
 </body>
 </html>

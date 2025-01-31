@@ -93,3 +93,98 @@ select.addEventListener('input', function (event) {
   // Save the preference to localStorage
   localStorage.setItem('colorScheme', newColorScheme);
 });
+
+
+
+
+// this is for automating the projects cards
+
+
+export async function fetchJSON(url) {
+  try {
+      // Fetch the JSON file from the given URL
+      const response = await fetch(url);
+      console.log("Fetch Response:", response);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    console.log("Fetched Data:", data);
+
+    return data;
+    
+
+
+  } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+      return []
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // Ensure the container element is valid
+  if (!containerElement) {
+      console.error("Invalid container element provided.");
+      return;
+  }
+
+  // Validate headingLevel to ensure it's an actual heading tag (h1-h6)
+  const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!validHeadingLevels.includes(headingLevel)) {
+      console.warn(`Invalid heading level '${headingLevel}', defaulting to 'h2'`);
+      headingLevel = 'h2'; // Default to h2 if invalid
+  }
+
+  // Clear previous content before rendering new projects
+  containerElement.innerHTML = '';
+
+  // Iterate through each project and create an article dynamically
+  projects.forEach(project => {
+      // Create an <article> element
+      const article = document.createElement('article');
+
+      // Ensure all properties exist, providing default values if missing
+      const title = project.title || "Untitled Project";
+      const image = project.image || "https://vis-society.github.io/labs/2/images/empty.svg";
+      const description = project.description || "No description available.";
+
+      // Create the heading dynamically
+      const heading = document.createElement(headingLevel);
+      heading.textContent = title;
+
+      // Create an image element
+      const img = document.createElement('img');
+      img.src = image;
+      img.alt = title;
+
+      // Create a paragraph for the description
+      const paragraph = document.createElement('p');
+      paragraph.textContent = description;
+
+      // Append elements to the article
+      article.appendChild(heading);
+      article.appendChild(img);
+      article.appendChild(paragraph);
+
+      // Append the article to the provided container element
+      containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+
+      if (!response.ok) {
+          throw new Error(`GitHub API request failed: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log("✅ GitHub Data:", data); // Debugging: Check fetched data
+
+      return data;
+  } catch (error) {
+      console.error("❌ Error fetching GitHub data:", error);
+      return null; // Return null if fetching fails
+  }
+}

@@ -230,3 +230,55 @@ nav {
   border-radius: 4px; /* Rounded corners */
   font: inherit; /* Inherit font styles */
 }
+
+.profile-container {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Space between image and stats */
+  justify-content: flex-start; /* Align content to the left */
+  max-width: 800px; /* Prevent content from stretching too wide */
+  margin: auto; /* Center container on the page */
+  padding: 20px 0;
+}
+
+/* ✅ Profile photo styling */
+.profile-photo {
+  max-width: 50%; /* Adjust as needed */
+  height: auto;
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+/* ✅ GitHub stats styling */
+.profile-stats {
+  background: #e6e6e6;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 300px; /* Adjust width as needed */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+}
+
+/* ✅ Labels inside GitHub stats */
+.github-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 10px;
+}
+
+/* ✅ Labels (dt) */
+.github-stats dt {
+  font-weight: bold;
+  color: #333;
+}
+
+/* ✅ Values (dd) */
+.github-stats dd {
+  margin: 0;
+  padding: 5px 0;
+  color: #555;
+}
+
+.profile-stats h4 {
+  color: black; /* ✅ Inherit text color based on the theme */
+  font-weight: bold;
+}
+

@@ -1,0 +1,74 @@
+[
+    {
+        "title": "NSF & HDR ML Hackathon",
+        "year": "2025",
+        "image": "../images/nsfmlhack.png",
+        "description": "Built an autoencoder with a k-means clustering and neural network to identify anomalous gravitational waves in data recorded from the Washington and Lousiana LIGO detectors."
+    },
+    {
+        "title": "Predicting Vermont Business Ratings & Recommending Local Favorites",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Made models with Ridge Regression & XGBoost to predict Vermont Business Ratings: ultimately XGBoost performed the best. Also built several recommender systems with lightFM, fastFM, and SVD to suggest businesses to users: SVD model performed the best."
+    },
+    {
+        "title": "Jane Street Market Prediction Kaggle Competition",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Performed exploratory analyses on a dataset with 100+ anonymized features to create a predictve model with XGBoost as for whether a stock (across different time horizons) is worth purchasing"
+    },
+    {
+        "title": "Zoning Analysis & Predictive Modeling of Power Outages ",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Developed a predictive model and conducted detailed data analyses on power outages in the U.S. from 2000 to 2016. Particularly, zoning analyses, hypothesis testings, and building a robust model was done to predict the number of customers affected by major outages"
+    },
+    {
+        "title": "UCSD Startup: Dormi",
+        "year": "2024",
+        "image": "../images/dormiheadslide.png",
+        "description": "With support from Dennis White, the CEO of Cytodome and an MBA student at UCSD, I led a group of five others in developing a business model and prototype of a better on-campus housing platform for UCSD"
+    },
+    {
+        "title": "How to Win the Powerball Jackpot...",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Autem culpa molestias laudantium voluptatibus facere dolore maiores, repellendus quis! Similique natus, excepturi optio in, praesentium distinctio dolorem nulla, eligendi aperiam error voluptatem veniam placeat dolor quod suscipit autem illo."
+    },
+    {
+        "title": "UCSD Startup: Recommending Where to Park",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "After forming a group with two others, I initiated contact with UCSD adminsitration to get API access of live parking data. The plan was to build a platform to help UCSD students coordinate thier commute to campus. "
+    },
+    {
+        "title": "Anomalous User Behavior Identification",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "tbd"
+    },
+    {
+        "title": "MediCamAI",
+        "year": "2025",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "tbd"
+    },
+    {
+        "title": "Animals of the World",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Made an endangered animal awareness website pulling from APIs to showcase in my high school coding class"
+    },
+    {
+        "title": "Club Compass",
+        "year": "2021",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "With a group of friends, I designed a social media platform for school clubs to list themselves on, post events, and handle official documentation."
+    },
+    {
+        "title": "Time2Thrift",
+        "year": "2020",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "In late 2020, San Diego thrift shops were no longer able to function because of COVID. I figured if I could design an ecommerce website to host several nearby thrift shops and also setup a COVID-friendly pickup/delivery system, I would be helping a good amount of people. I set out on this intiative after assembling a group of acquaintances."
+    }
+]
