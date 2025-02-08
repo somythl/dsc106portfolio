@@ -250,7 +250,7 @@ nav {
 
 /* ✅ GitHub stats styling */
 .profile-stats {
-  background: #e6e6e6;
+  background: #fbfbfb;
   padding: 15px;
   border-radius: 8px;
   max-width: 300px; /* Adjust width as needed */
@@ -280,5 +280,94 @@ nav {
 .profile-stats h4 {
   color: black; /* ✅ Inherit text color based on the theme */
   font-weight: bold;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-year {
+  font-family: Baskerville, serif; /* Apply Baskerville font */
+  font-variant-numeric: oldstyle-nums; /* Old-style numerals */
+  font-style: italic; /* Keep italics for styling */
+  font-size: 1rem; /* Adjust as needed */
+}
+
+.container {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center horizontally */
+  gap: 20px; /* Space between chart and legend */
+  max-width: 600px; /* Prevents container from stretching too wide */
+  margin: 0 auto; /* Centers the whole container */
+}
+
+/* ✅ Pie Chart Styling */
+#projects-plot {
+  flex-shrink: 0; /* Prevents the pie chart from shrinking */
+  width: 50%; /* Makes sure it doesn't take too much space */
+  max-width: 200px; /* Limits size for better responsiveness */
+}
+
+/* ✅ Legend Adjustments */
+.legend {
+  flex: 1; /* Makes the legend take up remaining space */
+  display: grid;
+  color: var(--text-color);
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); /* Responsive layout */
+  gap: 12px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-top: 1em;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.legend li {
+  display: flex;
+  color: var(--text-color);
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  min-width: 9em;
+}
+
+.legend li span {
+  color: black; /* This ensures the text inside follows the theme */
+}
+
+.legend li span em {
+  color: black
+}
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-color: var(--color);
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
+
+/* ✅ Make pie chart slices clickable */
+path {
+  cursor: pointer;
+}
+
+/* ✅ Ensure the hovered slice fades out others but not the selected one */
+svg:has(path:hover) path:not(:hover):not(.selected) {
+  opacity: 0.5;
+}
+
+/* ✅ Keep the selected wedge highlighted */
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+/* ✅ Apply the selected color to the pie slice */
+.selected:is(path) {
+  fill: var(--color);
 }
 

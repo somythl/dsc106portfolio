@@ -146,6 +146,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       // Ensure all properties exist, providing default values if missing
       const title = project.title || "Untitled Project";
       const image = project.image || "https://vis-society.github.io/labs/2/images/empty.svg";
+      const year = project.year || "Unknown Year"
       const description = project.description || "No description available.";
 
       // Create the heading dynamically
@@ -157,16 +158,26 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       img.src = image;
       img.alt = title;
 
+      const metaContainer = document.createElement('div');
+      metaContainer.classList.add("project-meta");
+
       // Create a paragraph for the description
       const paragraph = document.createElement('p');
       paragraph.textContent = description;
+      
+      const yearSpan = document.createElement('span');
+      yearSpan.classList.add('project-year'); // ✅ Add the correct class
+      yearSpan.textContent = "⏳ " + year;
+      
+      metaContainer.appendChild(yearSpan);
+      metaContainer.appendChild(paragraph);
+      
 
       // Append elements to the article
       article.appendChild(heading);
       article.appendChild(img);
-      article.appendChild(paragraph);
+      article.appendChild(metaContainer);
 
-      // Append the article to the provided container element
       containerElement.appendChild(article);
   });
 }

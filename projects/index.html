@@ -8,8 +8,24 @@
     <title>Projects Page</title>
 </head>
 <body>
+    
+
     <!-- ✅ This ensures the projects container exists -->
     <h1 class="projects-title">Projects (<span id="project-count">0</span>)</h1>
+
+    <div class="container">
+        <svg id="projects-plot" viewBox="-50 -50 100 100"></svg>
+        <ul class="legend"></ul>
+      </div>
+      
+      <input
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="🔍 Search projects…"
+      />
+
+
 
     <div class="projects"></div> <!-- ✅ Make sure this is present -->
 
@@ -17,4 +33,7 @@
     <script type="module" src="../global.js"></script>
     <script type="module" src="projects.js"></script>
 </body>
+
+
+
 </html>
