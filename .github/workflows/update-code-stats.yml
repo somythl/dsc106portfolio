@@ -9,9 +9,9 @@ on:
       - main
 
 permissions:
-  contents: write  # Allows pushing changes to the repository
-  pages: write     # Required for GitHub Pages (if needed)
-  id-token: write  # Used for authentication
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update-code-stats:
@@ -37,14 +37,15 @@ jobs:
           echo "🔍 Showing exact changes..."
           git diff
 
-      - name: Force Clean Working Directory Before Pulling
+      - name: **Force Clean Working Directory Before Pulling**
         run: |
           echo "🚨 Cleaning working directory to prevent pull conflicts..."
-          git reset --hard HEAD  # Removes unstaged changes
-          git clean -fdx  # Deletes all untracked files, including hidden files & directories
-          rm -rf .git/index.lock  # Removes any Git lock files that could be causing the issue
+          git reset --hard HEAD  # Removes all unstaged changes
+          git clean -fdx  # Deletes ALL untracked files, including hidden files & directories
+          rm -rf .git/index.lock  # Removes any Git lock files that could be causing issues
           git fetch --all  # Ensures the runner has the latest remote changes
           git checkout main  # Ensures we are on the correct branch
+          git pull --rebase origin main  # Pull the latest changes after cleaning
 
       - name: Debug Git Status After Cleaning
         run: |
