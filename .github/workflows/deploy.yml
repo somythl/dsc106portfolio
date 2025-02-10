@@ -28,13 +28,6 @@ jobs:
           mkdir -p meta  # Ensure directory exists before writing CSV
           npx elocuent -d . -o meta/loc.csv
 
-      - name: Force clean working directory before pulling
-        run: |
-          git reset --hard HEAD  # Removes unstaged changes
-          git clean -fd  # Deletes untracked files & directories
-          git fetch --all  # Ensures latest remote changes are available
-          git checkout main  # Ensures we are on the correct branch
-
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
