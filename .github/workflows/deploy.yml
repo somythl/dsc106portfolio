@@ -25,16 +25,13 @@ jobs:
 
       - name: Run Elocuent
         run: |
-          mkdir -p meta  # Ensure directory exists before writing CSV
           npx elocuent -d . -o meta/loc.csv
 
       - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull --rebase
+          mkdir -p meta
+          git pull
           git add -f meta/loc.csv
           git commit -m "Update code statistics" || echo "No changes to commit"
           git push
