@@ -1,0 +1,173 @@
+
+.stats-container {
+  max-width: 100%;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Make the stats section flex horizontally */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+}
+
+.stats-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.stats-item dt {
+  font-weight: bold;
+  color: #343a40;
+  font-size: 0.95rem;
+}
+
+.stats-item dd {
+  margin: 5px 0 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Highlight important statistics */
+.stats-item.important dd {
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+/* Add a hover effect */
+.stats-item:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.stats-item:hover dd {
+  color: white;
+}
+
+  /* Tooltip styling */
+dl.info {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  dl.info dt {
+    font-weight: bold;
+    color: #666;
+  }
+  
+  dl.info dd {
+    margin: 0;
+  }
+  
+  .tooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Smooth dot scaling effect */
+  circle {
+    transition: transform 200ms ease-in-out;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  circle:hover {
+    transform: scale(1.5);
+    fill: orange; /* Change color on hover */
+  }
+
+
+  @keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* Moves the dashes */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;  /* Light fill */
+  stroke: black;      /* Black outline */
+  stroke-opacity: 0.7; /* Slightly transparent stroke */
+  stroke-dasharray: 5 3; /* Dashed effect */
+  animation: marching-ants 2s linear infinite; /* Creates the moving effect */
+}
+
+circle.selected {
+  fill: #ff6b6b; /* Highlight selected dots */
+}
+
+#language-breakdown {
+  display: flex;
+  flex-direction: row; /* Stack elements vertically */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #dc3545;
+  min-height: 50px;
+  transition: opacity 0.3s ease-in-out;
+  position: relative;
+  gap: 10px; /* Adds spacing between elements */
+}
+
+/* ✅ Keep commit count separate and visible */
+.commit-count {
+  text-align: center;
+  color: #007bff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+/* ✅ Styling for individual language boxes */
+.language-box {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #343a40;
+  border: 2px solid #007bff;
+  display: inline-block;
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* ✅ Add hover effect */
+.language-box:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.05);
+  border-color: #0056b3;
+}

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="../global.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +13,93 @@
 <h1> Meta </h1>
 
 <p> This page includes stats about the code of this website </p>
+
+
+<div class="stats-container">
+  <dl class="stats">
+      <div class="stats-item important">
+          <dt>Total LOC</dt>
+          <dd>967</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Total commits</dt>
+          <dd>9</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Number of files</dt>
+          <dd>8</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Maximum depth</dt>
+          <dd>0</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Most active time of day</dt>
+          <dd>At night</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Most active day</dt>
+          <dd>Friday</dd>
+      </div>
+
+      <div class="stats-item important">
+          <dt>Longest file (max lines)</dt>
+          <dd>373</dd>
+      </div>
+
+      <div class="stats-item">
+          <dt>Average file length</dt>
+          <dd>121</dd>
+      </div>
+  </dl>
+</div>
+
+
+
+
+
+<dl id="commit-tooltip" class="info tooltip">
+    <dt>Commit</dt>
+    <dd>
+      <a href="" id="commit-link" target="_blank"></a>
+    </dd>
+  
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+  
+    <dt>Time</dt>
+    <dd id="commit-time"></dd>
+  
+    <dt>Author</dt>
+    <dd id="commit-author"></dd>
+  
+    <dt>Lines Edited</dt>
+    <dd id="commit-lines"></dd>
+
+  </dl>
+  
+
+  <h2>Commits by Time of Day</h2>
+
+
+<div id="chart"></div>
+
+
+<p id="selection-count"></p>
+
+<dl id="language-breakdown" class="stats"></dl>
+
+
+
+
+
+
+<script src="main.js"></script>
 
 </body>
 
