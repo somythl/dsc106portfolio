@@ -18,16 +18,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensures full Git history is available
+          fetch-depth: '0'
 
       - name: Run Elocuent
         run: |
           npx elocuent -d . -o meta/loc.csv
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           mkdir -p meta
